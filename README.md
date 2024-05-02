@@ -54,16 +54,20 @@ quality = os.environ.get('quality', QUALITY)                # - quality=480p
 ```進入資料夾
 cd T:\\twitchREC
 ```
-```docker build
+docker build
+```
 docker build -t twitch-recorder:v1 .
 ```
-```run
+run
+```
 docker-compose up -d
 ```
-```down
+down
+```
 docker-compose down
 ```
-```restar
+restar
+```
 docker-compose restar
 ```
 
