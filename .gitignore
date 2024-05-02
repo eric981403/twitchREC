@@ -73,6 +73,5 @@ fabric.properties
 #Pycharm
 .idea
 venv
-config.py
 processed/
 recorded/
