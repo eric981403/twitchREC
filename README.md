@@ -17,10 +17,33 @@ It is an improved version of [junian's twitch-recorder](https://gist.github.com/
    * Linux:      ```python3.8 -m pip install requests```
 3) Create `config.py` file in the same directory as `twitch-recorder.py` with:
 ```properties
-root_path = "/home/abathur/Videos/twitch"
-username = "forsen"
-client_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-client_secret = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+import os
+
+root_path = os.getcwd()
+# root_path = "T:\\twitchREC"
+
+REFRESH = 30
+DISPLAYNAME = ""
+USERNAME = "remiiouo"
+QUALITY = "best"
+devicename = "[G3]"
+
+
+# twitchAPI
+client_id = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# LINE Notify token 從開始側錄 傳送至twitchREC
+notify_token_start = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+notify_token_finish = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+notify_token_fix = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+notify_token_error = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# docker compose
+displayname = os.environ.get('displayname', DISPLAYNAME)    # - displayname=小米    
+refresh = int(os.environ.get('refresh', REFRESH))           # - refresh=600
+username = os.environ.get('username', USERNAME)             # - username=remiiouo
+quality = os.environ.get('quality', QUALITY)                # - quality=480p
 ```
 `root_path` - path to a folder where you want your VODs to be saved to  
 `username` - name of the streamer you want to record by default  
