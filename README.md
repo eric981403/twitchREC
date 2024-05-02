@@ -50,6 +50,17 @@ quality = os.environ.get('quality', QUALITY)                # - quality=480p
 `client_id` - you can grab this from [here](https://dev.twitch.tv/console/apps) once you register your application  
 `client_secret` - you generate this [here](https://dev.twitch.tv/console/apps) as well, for your registered application
 
+## Docker compose
+```
+  chiao622:
+    <<: *base
+    environment:
+      - displayname=阿寧
+      - username=chiao622
+#      - quality=720p
+#      - refresh=600
+```
+
 ## Docker
 進入資料夾
 ```
