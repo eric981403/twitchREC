@@ -1,13 +1,13 @@
 import os
 
 root_path = os.getcwd()
-# root_path = "T:\\twitchREC"
+# root_path = "C://"
 
 REFRESH = 30
 DISPLAYNAME = ""
-USERNAME = "remiiouo"
+USERNAME = "monpo147"
 QUALITY = "best"
-devicename = "[G3]"
+devicename = "[VN7]"
 
 
 # twitchAPI

@@ -73,5 +73,7 @@ fabric.properties
 #Pycharm
 .idea
 venv
+config.py
+docker-compose.yml
 processed/
 recorded/
