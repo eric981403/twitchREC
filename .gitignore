@@ -3,3 +3,4 @@ docker-compose.yml
 twitch-recorder.log
 processed/
 recorded/
+__pycache__/
