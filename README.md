@@ -7,26 +7,17 @@ It is an improved version of [junian's twitch-recorder](https://gist.github.com/
 3. [ffmpeg](https://ffmpeg.org/)
 
 ## Setting up
-1) Check if you have latest version of streamlink:
-    * `streamlink --version` shows current version
-    * `streamlink --version-check` shows available upgrade
-    * `sudo pip install --upgrade streamlink` do upgrade
-
-2) Install `requests` module [if you don't have it](https://pypi.org/project/requests/)  
-   * Windows:    ```python -m pip install requests```  
-   * Linux:      ```python3.8 -m pip install requests```
-3) Create `config.py` file in the same directory as `twitch-recorder.py` with:
+1) 在與 `twitch-recorder.py` 相同的目錄中建立 `config.py` 檔案，其內容為:
 ```properties
 import os
 
 root_path = os.getcwd()
-# root_path = "T:\\twitchREC"
 
-REFRESH = 30
-DISPLAYNAME = ""
-USERNAME = "remiiouo"
-QUALITY = "best"
-devicename = "[G3]"
+REFRESH = 30            # 預設刷新頻率
+DISPLAYNAME = ""        # 預設中文名稱
+USERNAME = "monpo147"   # 預設英文ID
+QUALITY = "best"        # 預設解析度
+devicename = "[G3]"    # 裝置名稱
 
 
 # twitchAPI
@@ -45,10 +36,22 @@ refresh = int(os.environ.get('refresh', REFRESH))           # - refresh=600
 username = os.environ.get('username', USERNAME)             # - username=remiiouo
 quality = os.environ.get('quality', QUALITY)                # - quality=480p
 ```
-`root_path` - path to a folder where you want your VODs to be saved to  
-`username` - name of the streamer you want to record by default  
-`client_id` - you can grab this from [here](https://dev.twitch.tv/console/apps) once you register your application  
-`client_secret` - you generate this [here](https://dev.twitch.tv/console/apps) as well, for your registered application
+
+
+`devicename` - 裝置名稱
+去[twitchDevelopers](https://dev.twitch.tv/console/apps)註冊您的應用程式
+`名稱` twitchREC(隨便取)
+`OAuth 重新導向網址` http://localhost
+`分類` Other
+`生成用戶端ID`
+`生成用戶端密碼`
+
+`client_id` - 用戶端ID
+`client_secret` - 用戶端密碼
+`notify_token_start` - LineNotify 側錄開始的token
+`notify_token_finish` - LineNotify 側錄完成的token
+`notify_token_fix` - LineNotify 側錄修復的token
+`notify_token_error` - LineNotify 側錄故障的token
 
 ## Docker compose
 ```
