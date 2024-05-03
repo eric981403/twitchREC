@@ -55,10 +55,10 @@ quality = os.environ.get('quality', QUALITY)                # - quality=480p
 
 ## Docker compose
 
-`displayname` = 中文名稱
-`username` = 英文ID
-`quality` = 解析度
-`refresh` = 刷新頻率
+`displayname` = 中文名稱  
+`username` = 英文ID  
+`quality` = 解析度  
+`refresh` = 刷新頻率  
 
 ```
 version: "3.9"
