@@ -128,6 +128,12 @@ services:
 # start cmd /k "cd twitch-stream-recorder-master && python twitch-recorder.py -u happlesim"
 ```
 
+5) 安裝Docker環境  
+`windows`  
+在 WSL 2 上開始使用 Docker 遠端容器  
+[wsl2安裝教學](https://learn.microsoft.com/zh-tw/windows/wsl/install)  
+[wsl2設定教學](https://learn.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers)  
+
 
 ## 執行Docker
 1) 進入資料夾
