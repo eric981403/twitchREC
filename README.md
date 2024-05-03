@@ -36,6 +36,7 @@ REFRESH = 30            # 預設刷新頻率
 DISPLAYNAME = ""        # 預設中文名稱
 USERNAME = "monpo147"   # 預設英文ID
 QUALITY = "best"        # 預設解析度
+
 devicename = "[G3]"    # 裝置名稱
 
 
@@ -56,10 +57,7 @@ username = os.environ.get('username', USERNAME)             # - username=remiiou
 quality = os.environ.get('quality', QUALITY)                # - quality=480p
 ```
 
-
-
-## Docker compose
-
+4) 在與 `twitch-recorder.py` 相同的目錄中建立 `docker-compose.yml` 檔案，其內容為: 
 `displayname` = 中文名稱  
 `username` = 英文ID  
 `quality` = 解析度  
@@ -131,28 +129,28 @@ services:
 ```
 
 
-## Docker
-進入資料夾cd
+## 執行Docker
+1) 進入資料夾
 ```
 cd T:\\twitchREC
 ```
 
-編譯docker build
+2) 編譯docker build
 ```
 docker build -t twitch-recorder:v1 .
 ```
 
-開始執行run
+3) 開始執行run
 ```
 docker-compose up -d
 ```
 
-中止執行down
+4) 中止執行down
 ```
 docker-compose down
 ```
 
-重新執行restar
+5) 重新執行restar
 ```
 docker-compose restar
 ```
