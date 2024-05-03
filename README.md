@@ -128,11 +128,28 @@ services:
 # start cmd /k "cd twitch-stream-recorder-master && python twitch-recorder.py -u happlesim"
 ```
 
-5) 建置Docker環境  
+## 建置Docker環境  
 `windows`  
-在 WSL 2 上開始使用 Docker 遠端容器  
+1) 在 WSL 2 上開始使用 Docker 遠端容器  
 [安裝Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)  
+
+2) 安裝wsl
+您現在可以安裝使用單一命令執行 WSL 所需的所有項目。 以滑鼠右鍵按一下並選取 [以系統管理員身分執行]，在系統管理員模式中開啟 PowerShell 或 Windows 命令提示字元，輸入 `wsl --install` 命令，然後重新開機電腦。 (使用 `wsl --install` 命令安裝的新 Linux 安裝預設會設定為 WSL 2)  
+```
+wsl --install
+```
+安裝 WSL，並為在 WSL 2 中執行的 Linux 發行版本設定使用者名稱和密碼。  
+
 [wsl2安裝教學](https://learn.microsoft.com/zh-tw/windows/wsl/install)  
+
+3) 
+啟動 Docker Desktop  
+進入`Settings`  
+  `Resources`
+    `WSL integration`
+      `Refetch`後打開`Ubuntu`
+
+
 [wsl2設定教學](https://learn.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers)  
 
 
