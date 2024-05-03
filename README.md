@@ -140,17 +140,18 @@ cd T:\\twitchREC
 docker build -t twitch-recorder:v1 .
 ```
 
-3) 開始執行run
+3)   
+開始執行run
 ```
 docker-compose up -d
 ```
 
-4) 中止執行down
+中止執行down
 ```
 docker-compose down
 ```
 
-5) 重新執行restar
+重新執行restar
 ```
 docker-compose restar
 ```
