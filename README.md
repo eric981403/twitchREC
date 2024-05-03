@@ -54,86 +54,100 @@ quality = os.environ.get('quality', QUALITY)                # - quality=480p
 `notify_token_error` - LineNotify 側錄故障的token  
 
 ## Docker compose
+
+`displayname` = 中文名稱
+`username` = 英文ID
+`quality` = 解析度
+`refresh` = 刷新頻率
+
 ```
-  chiao622:
+version: "3.9"
+
+# 在此處設置全局日誌驅動程式
+x-logging: &logging
+  driver: "json-file"
+  options:
+    max-size: "3m" # 這裡設定最大大小為 5MB
+    max-file: "2" # 這裡設定最大文件數為 3
+
+x-base_service: &base
+  image: twitch-recorder:v1
+  # build: .
+  command: python3 twitch-recorder.py
+  restart: always
+  # logging: *logging
+  environment:
+    - LC_ALL=C.UTF-8
+  volumes:
+    - .:/app
+  # healthcheck:
+  #   test: ["CMD", "supervisorctl", "status"]
+  #   interval: 60s
+  #   timeout: 3s
+  #   retries: 1
+
+services:
+  dozzle:
+    container_name: dozzle
+    image: amir20/dozzle:latest
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 8892:8080
+
+  remiiouo:
     <<: *base
     environment:
-      - displayname=阿寧
-      - username=chiao622
-#      - quality=720p
-#      - refresh=600
+      - displayname=小米
+      - username=remiiouo
+
+  abuy_:
+    <<: *base
+    environment:
+      - displayname=小白
+      - username=abuy_
+  #     - quality=720p
+  #     - refresh=600
+
+  monpo147:
+    <<: *base
+    environment:
+      - displayname=孟婆
+      - username=monpo147
+
+  qaws_1109:
+    <<: *base
+    environment:
+      - displayname=凌晨
+      - username=qaws_1109
+
+# start cmd /k "cd twitch-stream-recorder-master && python twitch-recorder.py -u happlesim"
 ```
 
+
 ## Docker
-進入資料夾
+進入資料夾cd
 ```
 cd T:\\twitchREC
 ```
 
-docker build
+編譯docker build
 ```
 docker build -t twitch-recorder:v1 .
 ```
 
-run
+開始執行run
 ```
 docker-compose up -d
 ```
 
-down
+中止執行down
 ```
 docker-compose down
 ```
 
-restar
+重新執行restar
 ```
 docker-compose restar
 ```
-
-
-
-## Running script
-The script will be logging to a console and to a file `twitch-recorder.log`
-### On linux
-Run the script
-```shell script
-python3.8 twitch-recorder.py
-```
-To record a specific streamer use `-u` or `--username`
-```shell script
-python3.8 twitch-recorder.py --username forsen
-```
-To specify quality use `-q` or `--quality`
-```shell script
-python3.8 twitch-recorder.py --quality 720p
-```
-To change default logging use `-l`, `--log` or `--logging`
-```shell script
-python3.8 twitch-recorder.py --log warn
-```
-To disable ffmpeg processing (fixing errors in recorded file) use `--disable-ffmpeg`
-```shell script
-python3.8 twitch-recorder.py --disable-ffmpeg
-```
-If you want to run the script as a job in the background and be able to close the terminal:
-```shell script
-nohup python3.8 twitch-recorder.py >/dev/null 2>&1 &
-```
-In order to kill the job, you first list them all:
-```shell script
-jobs
-```
-The output should show something like this:
-```shell script
-[1]+  Running                 nohup python3.8 twitch-recorder > /dev/null 2>&1 &
-```
-And now you can just kill the job:
-```shell script
-kill %1
-```
-### On Windows
-You can run the scipt from `cmd` or [terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab), by simply going to the directory where the script is located at and using command:
-```shell script
-python twitch-recorder.py
-```
-The optional parameters should work exactly the same as on Linux.
