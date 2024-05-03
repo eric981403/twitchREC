@@ -130,7 +130,7 @@ services:
 
 ## 建置Docker環境  
 `windows`  
-1) 在 WSL 2 上開始使用 Docker 遠端容器  
+1) 在 WSL 2 上開始使用 Docker 遠端容器 [wsl2安裝教學](https://learn.microsoft.com/zh-tw/windows/wsl/install)  
 [安裝Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)  
 
 2) 安裝wsl
@@ -138,19 +138,19 @@ services:
 ```
 wsl --install
 ```
-安裝 WSL，並為在 WSL 2 中執行的 Linux 發行版本設定使用者名稱和密碼。  
+3) 在 WSL 2 中執行的 Linux 發行版本設定使用者名稱和密碼。  
 
-[wsl2安裝教學](https://learn.microsoft.com/zh-tw/windows/wsl/install)  
+
 
 3) 
-啟動 Docker Desktop  
+啟動 Docker Desktop [wsl2設定教學](https://learn.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers)  
 進入`Settings`  
-  `Resources`
-    `WSL integration`
+  `Resources`  
+    `WSL integration`  
       `Refetch`後打開`Ubuntu`
 
 
-[wsl2設定教學](https://learn.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers)  
+
 
 
 ## 執行Docker
