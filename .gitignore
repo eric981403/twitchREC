@@ -1,4 +1,5 @@
-
 config.py
-
 docker-compose.yml
+twitch-recorder.log
+processed/
+recorded/
