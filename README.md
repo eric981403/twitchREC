@@ -1,18 +1,21 @@
 # 此程式參考[twitch-stream-recorder](https://github.com/ancalentari/twitch-stream-recorder)修改
 
 ## 準備動作
-1) 去[twitchDevelopers](https://dev.twitch.tv/console/apps)註冊您的應用程式  
+1) 下載專案解壓縮至要儲存VOD的資料夾
+
+2) 去[twitchDevelopers](https://dev.twitch.tv/console/apps)註冊您的應用程式  
 `名稱` twitchREC(隨便取)  
 `OAuth 重新導向網址` http://localhost  
 `分類` Other  
 `生成用戶端ID`  
 `生成用戶端密碼`  
 
-2) 去[LINE Notify](https://notify-bot.line.me/zh_TW/)取得token  
+3) 若需要LINE機器人通知 去[LINE Notify](https://notify-bot.line.me/zh_TW/)取得token  
+建議創一個群組 把LINE Notify加進去 才能直接改群組名稱  
 [LINE Notify教學](https://steam.oxxostudio.tw/category/python/spider/line-notify.html)
 
 
-3) 在與 `twitch-recorder.py` 相同的目錄中建立 `config.py` 檔案，其內容為:  
+4) 在與 `twitch-recorder.py` 相同的目錄中建立 `config.py` 檔案，其內容為:  
 `client_id` - 用戶端ID  
 `client_secret` - 用戶端密碼  
 `notify_token_start` - LineNotify 側錄開始的token  
@@ -51,7 +54,7 @@ username = os.environ.get('username', USERNAME)             # - username=remiiou
 quality = os.environ.get('quality', QUALITY)                # - quality=480p
 ```
 
-4) 在與 `twitch-recorder.py` 相同的目錄中建立 `docker-compose.yml` 檔案，其內容為: 
+5) 在與 `twitch-recorder.py` 相同的目錄中建立 `docker-compose.yml` 檔案，其內容為: 
 `displayname` = 中文名稱  
 `username` = 英文ID  
 `quality` = 解析度  
