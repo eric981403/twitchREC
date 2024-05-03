@@ -36,13 +36,13 @@ devicename = "[G3]"    # 裝置名稱
 
 # twitchAPI
 client_id = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+client_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 # LINE Notify token 從開始側錄 傳送至twitchREC
-notify_token_start = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-notify_token_finish = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-notify_token_fix = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-notify_token_error = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+notify_token_start = ""
+notify_token_finish = ""
+notify_token_fix = ""
+notify_token_error = ""
 
 # docker compose
 displayname = os.environ.get('displayname', DISPLAYNAME)    # - displayname=小米    

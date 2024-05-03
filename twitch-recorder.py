@@ -82,7 +82,8 @@ class TwitchRecorder:
         #         recorded_filename = os.path.join(recorded_path, f)
         #         processed_filename = os.path.join(processed_path, f)
         #         self.process_recorded_file(recorded_filename, processed_filename)
-        #     lineNotify(config.notify_token_fix, f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}]\n{processed_filename[processed_filename.find(' - ')+23:]}')
+        #     if config.notify_token_fix != "":
+        #         lineNotify(config.notify_token_fix, f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}]\n{processed_filename[processed_filename.find(' - ')+23:]}')
         # except Exception as e:
         #     logging.error(e)
 
@@ -138,7 +139,8 @@ class TwitchRecorder:
             elif status == TwitchResponseStatus.ERROR:
                 logging.error("%s unexpected error!!!!!!!!!!!!!!!!!!!!!!!!!",
                               datetime.now(tz_utc_8).strftime(strftime))
-                lineNotify(config.notify_token_error,f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}] unexpected error!!!!!!!!!!!!!!!!!!!!!!!!!')
+                if config.notify_token_error != "":
+                    lineNotify(config.notify_token_error,f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}] unexpected error!!!!!!!!!!!!!!!!!!!!!!!!!')
                 sys.exit()
                 # time.sleep(300)
             elif status == TwitchResponseStatus.OFFLINE:
@@ -168,7 +170,8 @@ class TwitchRecorder:
             elif status == TwitchResponseStatus.UNAUTHORIZED:
                 logging.info("unauthorized, will attempt to log back in immediately")
                 self.access_token = self.fetch_access_token()
-                lineNotify(config.notify_token_error,f'{config.devicename} {datetime.now(tz_utc_8).strftime(strftime)} unauthorized, will attempt to log back in immediately!!!!!!!!!!!!!!!!!!!!!!!!!')
+                if config.notify_token_error != "":
+                    lineNotify(config.notify_token_error,f'{config.devicename} {datetime.now(tz_utc_8).strftime(strftime)} unauthorized, will attempt to log back in immediately!!!!!!!!!!!!!!!!!!!!!!!!!')
             elif status == TwitchResponseStatus.ONLINE:
                 logging.info("%s %s online, stream recording in session", self.displayname, self.username)
                 channels = info["data"]
@@ -191,7 +194,8 @@ class TwitchRecorder:
                 #  'is_mature': True}
 
                 channel = next(iter(channels), None)
-                lineNotify(config.notify_token_start, f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}]\n{channel.get("title")} {self.quality}')
+                if config.notify_token_start != "":
+                    lineNotify(config.notify_token_start, f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}]\n{channel.get("title")} {self.quality}')
                 
                 filename = channel.get("user_name") + " - " + self.username + " - " + datetime.now(tz_utc_8).strftime(strftime) + " - " + channel.get("title") + ".mp4"
 
@@ -207,7 +211,8 @@ class TwitchRecorder:
                      "-o", recorded_filename])
 
                 logging.info("recording stream is done")
-                lineNotify(config.notify_token_finish, f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}]\n{channel.get("title")}')
+                if config.notify_token_finish != "":
+                    lineNotify(config.notify_token_finish, f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}]\n{channel.get("title")}')
                 # if os.path.exists(recorded_filename) is True:
                 #     self.process_recorded_file(recorded_filename, processed_filename)
                 # else:
