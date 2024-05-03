@@ -147,10 +147,7 @@ wsl --install
 進入`Settings`  
 ______`Resources`  
 ________`WSL integration`  
-__________ `Refetch`後打開`Ubuntu`
-
-
-
+__________ `Refetch`後 將`Ubuntu`開啟   
 
 
 ## 執行Docker
