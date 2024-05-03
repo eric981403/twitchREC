@@ -142,12 +142,12 @@ wsl --install
 
 
 
-3) 
-啟動 Docker Desktop [wsl2設定教學](https://learn.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers)  
+3) 設定wsl2 [wsl2設定教學](https://learn.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers)  
+啟動 Docker Desktop  
 進入`Settings`  
-__`Resources`  
-____`WSL integration`  
-______ `Refetch`後打開`Ubuntu`
+______`Resources`  
+________`WSL integration`  
+__________ `Refetch`後打開`Ubuntu`
 
 
 
