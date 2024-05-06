@@ -127,7 +127,7 @@ services:
 
 ## 建置Docker環境  
 `windows`  
-1) [使用 PowerShell 啟用 Hyper-V](https://learn.microsoft.com/zh-tw/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-hyper-v-using-powershell)  
+1) [使用 PowerShell 啟用 Hyper-V](https://learn.microsoft.com/zh-tw/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-hyper-v-using-powershell)(好像不需要)  
 以系統管理員身分開啟 PowerShell 主控台  
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
