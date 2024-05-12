@@ -146,11 +146,11 @@ class TwitchRecorder:
             elif status == TwitchResponseStatus.OFFLINE:
                 logging.info("%s %s currently offline, checking again in %s seconds", self.displayname, self.username, self.refresh)
                 video_list = [f for f in os.listdir(recorded_path) if os.path.isfile(os.path.join(recorded_path, f))]
-                # 直播斷線後每15秒嘗試連線20次,再進行檔案搬家
+                # 直播斷線後每15秒嘗試連線40次,再進行檔案搬家
                 if disconnect_check == True:
                     disconnect_time += 1
-                    logging.info(f'[{disconnect_time}/20] 斷線嘗試重新連線')
-                    if disconnect_time >= 20:
+                    logging.info(f'[{disconnect_time}/40] 斷線嘗試重新連線,15秒嘗試連線')
+                    if disconnect_time >= 40:
                         disconnect_check = False 
                         disconnect_time = 0
                     time.sleep(15)
