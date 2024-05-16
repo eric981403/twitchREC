@@ -195,7 +195,7 @@ class TwitchRecorder:
 
                 channel = next(iter(channels), None)
                 if config.notify_token_start != "":
-                    lineNotify(config.notify_token_start, f'{config.devicename} {self.displayname} {self.username}\n[{datetime.now(tz_utc_8).strftime(strftime)}]\n{channel.get("title")} {self.quality}')
+                    lineNotify(config.notify_token_start, f'{config.devicename} {self.displayname} https://www.twitch.tv/{self.username} \n[{datetime.now(tz_utc_8).strftime(strftime)}]\n{channel.get("title")} {self.quality}')
                 
                 filename = channel.get("user_name") + " - " + self.username + " - " + datetime.now(tz_utc_8).strftime(strftime) + " - " + channel.get("title") + ".mp4"
 
