@@ -135,6 +135,7 @@ services:
 ```
 wsl --install
 ```
+# 若安裝失敗請至BIOS開啟虛擬機功能Virtualization  
 3) 在 WSL 2 中執行的 Linux 發行版本設定使用者名稱和密碼。  
 
 
