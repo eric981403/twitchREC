@@ -127,25 +127,19 @@ services:
 
 ## 建置Docker環境  
 `windows`  
-1) [使用 PowerShell 啟用 Hyper-V](https://learn.microsoft.com/zh-tw/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#enable-hyper-v-using-powershell)(好像不需要)  
-以系統管理員身分開啟 PowerShell 主控台  
-```
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-```
-
-2) [在 WSL 2 上開始使用 Docker 遠端容器](https://learn.microsoft.com/zh-tw/windows/wsl/install)  
+1) [在 WSL 2 上開始使用 Docker 遠端容器](https://learn.microsoft.com/zh-tw/windows/wsl/install)  
 [下載Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)  
 
-3) 安裝wsl
+2) 安裝wsl
 您現在可以安裝使用單一命令執行 WSL 所需的所有項目。 以滑鼠右鍵按一下並選取 [以系統管理員身分執行]，在系統管理員模式中開啟 PowerShell 或 Windows 命令提示字元，輸入 `wsl --install` 命令，然後重新開機電腦。 (使用 `wsl --install` 命令安裝的新 Linux 安裝預設會設定為 WSL 2)  
 ```
 wsl --install
 ```
-4) 在 WSL 2 中執行的 Linux 發行版本設定使用者名稱和密碼。  
+3) 在 WSL 2 中執行的 Linux 發行版本設定使用者名稱和密碼。  
 
 
 
-5) [設定wsl2](https://learn.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers)  
+4) [設定wsl2](https://learn.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers)  
 啟動 Docker Desktop  
 進入`Settings`  
 ______`Resources`  
