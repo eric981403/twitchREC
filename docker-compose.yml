@@ -285,6 +285,11 @@ services:
     environment:
       - displayname=右汝
       - username=yujuu623
+  iris920123:
+    <<: *base
+    environment:
+      - displayname=小有
+      - username=iris920123
 
   yukineko0975:
     <<: *base
