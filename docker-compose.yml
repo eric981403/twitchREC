@@ -39,6 +39,11 @@ services:
       - displayname=小米
       - username=remiiouo
 
+  cawai0147:
+    <<: *base
+    environment:
+      - displayname=蛋捲
+      - username=cawai0147
   abuy_:
     <<: *base
     environment:
@@ -118,11 +123,11 @@ services:
       - displayname=韓妹
       - username=magenta62
 
-  0cheoli:
+  chodan_:
     <<: *base
     environment:
-      - displayname=韓妹re
-      - username=0cheoli
+      - displayname=韓妹忽大忽小奶
+      - username=chodan_
 
   yoloiiiooo:
     <<: *base
@@ -363,6 +368,12 @@ services:
       - displayname=我是三角錐
       - username=sandwichwx3
       - quality=720p
+
+  minni0620:
+    <<: *base
+    environment:
+      - displayname=矮矮牙
+      - username=minni0620
 
   tonychachachacha:
     <<: *base
